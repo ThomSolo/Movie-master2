@@ -1,19 +1,19 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
-//This code uses Radix Sort while showing how it would look to sort and array (using heap).
+//This code uses Heapsort while showing how it would look to sort and array (using heap).
 //In this, we show the first 10 digits to give you an example of what is being done behind the scenes.
-//The first 10 digits (of the random array) show 100000 random integers.
-//The first 10 digits (of the sorted array) show the 100000 random integers in a sorted way/array.
+
 //The execution time is shown with all of this.
 public class Heapsort {
 
 	public static List<Movie> create() throws FileNotFoundException {// creates new list of movies based on log files
-		File names = new File("MOVIE-master/names.log");
-		File ids = new File("MOVIE-master/ids.log");
-		File years = new File("MOVIE-master/year.log");
+		File names = new File("C:\\Users\\Solo_T\\git\\repository\\MOVIE-master\\names.log");
+		File ids = new File("C:\\Users\\Solo_T\\git\\repository\\MOVIE-master\\ids.log"); 
+		File years = new File("C:\\Users\\Solo_T\\git\\repository\\MOVIE-master\\year.log");
 
-		//System.out.println(names.exists());
+		System.out.println("Unsorted movie data");
+		System.out.println(" ");
 
 		Scanner sc2 = new Scanner(ids);
 		Scanner sc3 = new Scanner(years);
@@ -51,12 +51,14 @@ public class Heapsort {
 			System.out.println(o.movid);
 		}
 
-		System.out.println(" heapsorted array below");
+		
+		System.out.println(" ");
 
 		Heapsort obj = new Heapsort();
 		Heapsort.sort(ints);
 
-		System.out.println("done ");
+		System.out.println("The data has been heapsorted and is below");
+		System.out.println(" ");
 		for (Movie o : ints) {
 			//o.print(o);
 			System.out.println(o.movid);
