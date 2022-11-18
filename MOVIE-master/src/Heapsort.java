@@ -9,9 +9,9 @@ import java.util.*;
 public class Heapsort {
 
 	public static List<Movie> create() throws FileNotFoundException {// creates new list of movies based on log files
-		File names = new File("names.log");
-		File ids = new File("ids.log");
-		File years = new File("year.log");
+		File names = new File("MOVIE-master/names.log");
+		File ids = new File("MOVIE-master/ids.log");
+		File years = new File("MOVIE-master/year.log");
 
 		//System.out.println(names.exists());
 
@@ -50,15 +50,15 @@ public class Heapsort {
 			//o.print(o);
 			System.out.println(o.movid);
 		}
-		
-		System.out.println(" ");
+
+		System.out.println(" heapsorted array below");
 
 		Heapsort obj = new Heapsort();
 		Heapsort.sort(ints);
 
-		System.out.println(" ");
+		System.out.println("done ");
 		for (Movie o : ints) {
-			o.print(o);
+			//o.print(o);
 			System.out.println(o.movid);
 		}
 	}
@@ -85,6 +85,7 @@ public class Heapsort {
 
 			makeHeap(ints, i, 0);
 		}
+
 	}
 
 
@@ -105,11 +106,13 @@ public class Heapsort {
 			Movie swap = ints.get(i);
 			ints.set(0,ints.get(i));
 			ints.set(0,swap);
-			
-			if (most <= 48) {
-				System.out.println(num+"hhh"+ints.indexOf(most));
-			makeHeap(ints, num, ints.indexOf(most));
-			}
+			ints.get(i).setMovname("gg");
+			ints.get(num).setMovname("gg");
+
+			//			if (most!=-1) {
+			//				System.out.println(num+"hhh"+ints.indexOf(most));
+			makeHeap(ints, num, most);
+			//}
 
 		}
 		//		for (Movie o : ints) {
